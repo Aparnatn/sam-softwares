@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { CompanylistResponse, CompanyRequest, CompanyResponse, CustomerRequest, CustomerResponse, EmployeeRequest, EmployeeResponse, GroupRequest, GroupResponse, ItemRequest, ItemResponse, JobRequest, JobResponse, Ledger, LedgereditRequest, LedgereditResponse, LedgerRequest, LedgerResponse, LedgerStatementRequest, LedgerStatementResponse, LoginRequest, LoginResponse, RegisterRequest, RegisterResponse, SupplierRequest, SupplierResponse, UserlistResponse, User, EmployeeeditRequest, EmployeeeditResponse } from './login.interfaces';
+import { CompanylistResponse, CompanyRequest, CompanyResponse, CustomerRequest, CustomerResponse, EmployeeRequest, EmployeeResponse, GroupRequest, GroupResponse, ItemRequest, ItemResponse, JobRequest, JobResponse, Ledger, LedgereditRequest, LedgereditResponse, LedgerRequest, LedgerResponse, LedgerStatementRequest, LedgerStatementResponse, LoginRequest, LoginResponse, RegisterRequest, RegisterResponse, SupplierRequest, SupplierResponse, UserlistResponse, User, EmployeeeditRequest, EmployeeeditResponse, Employee } from './login.interfaces';
 import { LedgerComponent } from '../ledger/ledger.component';
 
 export interface LedgerFilter {
@@ -241,8 +241,8 @@ export class UserService {
   getCust(id: number): Observable<Ledger> {
     return this.http.get<Ledger>(`${this.apiUrl}/ledgedits/${id}`);
   }
-  getemp(id:number): Observable<EmployeeResponse> {
-    return this.http.get<EmployeeResponse>(`${this.apiUrl}/Sam/employee/${id}/update`,
+  getemp(id:number): Observable<Employee> {
+    return this.http.get<Employee>(`${this.apiUrl}/Sam/employee/${id}`,
     );
   }
 

@@ -372,5 +372,9 @@ export const ROUTES: Routes = [
     path: 'sale-return-edit',
     component: SaleReturnEditComponent,
   },
+  {
+    path: 'financial',
+    component: FinancialComponent,
+  },
 ];
 export class AppModule { }
